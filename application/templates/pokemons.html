@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block content %}
+<h1>Pokemons</h1>
+{% for pokemon in pokemons %}
+<h1>{{pokemon.name}}</h1>
+<p>{{pokemon.ability}}</p>
+<p>{{pokemon.type}}</p>
+{% endfor %}
+
+<form method="POST" action="">
+  {{form.hidden_tag()}}
+  <fieldset>
+    <legend>Create A Pokemon</legend>
+    <div>{{form.name.label}} {{form.name}}</div>
+    <div>{{form.ability.label}} {{form.ability}}</div>
+    <div>{{form.type.label}} {{form.type}}</div>
+  </fieldset>
+  <div>{{form.submit}}</div>
+</form>
+{% endblock %}
